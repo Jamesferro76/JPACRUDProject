@@ -13,7 +13,7 @@
 
 <c:choose>
 <c:when test="${not empty inst }">
-
+<h2>Update Successful</h2>
 <table class="table table-striped table-hover">
 <thead class="table-dark">
 <tr>
@@ -43,7 +43,6 @@
 
 </tbody>
 </table>
-
 <form action="delete.do" method="post">
 <input type="hidden" name="instId" value="${inst.id }">
 <input class="btn btn-primary" type="submit" value="Delete">
@@ -54,12 +53,14 @@
 <input class="btn btn-primary" type="submit" value="Update">
 </form>
 
-
-
 </c:when>
 <c:otherwise>
-<h3>No instrument found</h3>
+<h3>Update Failed</h3>
 </c:otherwise>
+
+
+
+
 
 </c:choose>
 

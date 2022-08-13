@@ -12,12 +12,16 @@
 <h1>Welcome to the Instrument App</h1>
 
 <form action="findById.do">
-Instrument ID: <input class= "form-control" type="text" name="instId" />
-<input class="bttn btn-primary" type="submit" value="find instrument by id">
+Instrument ID: <input class= "form-control" type="text" name="instId" required/>
+<input class="bttn btn-primary" type="submit" value="Find Instrument By Id">
 </form>
 
 <form action="findAll.do">
-<input class="bttn btn-primary" type="submit" value="find all instruments">
+<input class="bttn btn-primary" type="submit" value="Find All Instruments">
+</form>
+
+<form action="createNewPage.do">
+<input class="bttn btn-primary" type="submit" value="Create Instrument Log">
 </form>
 
 <jsp:include page="bootstrapFoot.jsp"/>

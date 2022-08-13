@@ -34,4 +34,60 @@ public class InstumentDaoImpl implements InstrumentDao {
 		return allInstruments;
 	}
 
+//	@Override
+//	public InstrumentLog createNewInstrument(InstrumentLog inst) {
+//
+//		em.persist(inst);
+//		em.flush();
+//
+//
+//		return inst;
+//	}
+	@Override
+	public InstrumentLog createNewInstrument(String instrument, String brand, String modelOfInstrument, String instrumentFamily, String condition) {
+		InstrumentLog inst= new InstrumentLog(instrument, brand, modelOfInstrument, instrumentFamily, condition);
+
+		em.persist(inst);
+//		em.flush();
+		
+		
+		return inst;
+	}
+
+	@Override
+	public InstrumentLog deleteInstrument(int instId) {
+		InstrumentLog inst=findById(instId);
+		em.remove(inst);
+		
+		return inst;
+	}
+
+	@Override
+	public InstrumentLog updateInstrument(int instId, String instrument, String brand, String modelOfInstrument, String instrumentFamily, String condition) {
+		InstrumentLog ogInst=findById(instId);
+		
+		if(!instrument.equals("")&&instrument!=null) {
+			ogInst.setInstrument(instrument);
+		}
+		if(!brand.equals("")&&brand!=null) {
+			ogInst.setBrand(brand);
+		}
+		if(!modelOfInstrument.equals("")&&modelOfInstrument!=null) {
+			ogInst.setModelOfInstrument(modelOfInstrument);
+		}
+		if(!instrumentFamily.equals("")&&instrumentFamily!=null) {
+			ogInst.setInstrumentFamily(instrumentFamily);
+		}
+		if(!condition.equals("")&&condition!=null) {
+			ogInst.setCondition(condition);
+		}
+		
+		return ogInst;
+		
+		
+		
+	}
+	
+	
+
 }

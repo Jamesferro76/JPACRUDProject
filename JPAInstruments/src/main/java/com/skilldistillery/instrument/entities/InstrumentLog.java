@@ -1,6 +1,7 @@
 package com.skilldistillery.instrument.entities;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name="instrument")
@@ -27,12 +31,15 @@ public class InstrumentLog {
 	@Column(name="instrument_family")
 	private String instrumentFamily;
 	
+	@CreationTimestamp
 	@Column(name="date_created")
-	private Date dateCreated;
+	private LocalDateTime dateCreated;
 	
+	@UpdateTimestamp
 	@Column(name="last_update")
-	private Date lastUpdate;
+	private LocalDateTime lastUpdate;
 	
+	@Column(name="instrument_condition")
 	private String condition;
 	
 	
@@ -40,6 +47,35 @@ public class InstrumentLog {
 	public InstrumentLog() {
 		super();
 	}
+
+	
+	
+	public InstrumentLog(String instrument, String brand, String modelOfInstrument, String instrumentFamily,
+			String condition) {
+		super();
+		this.instrument = instrument;
+		this.brand = brand;
+		this.modelOfInstrument = modelOfInstrument;
+		this.instrumentFamily = instrumentFamily;
+		this.condition = condition;
+	}
+
+
+
+	public InstrumentLog(int id, String instrument, String brand, String modelOfInstrument, String instrumentFamily,
+			LocalDateTime dateCreated, LocalDateTime lastUpdate, String condition) {
+		super();
+		this.id = id;
+		this.instrument = instrument;
+		this.brand = brand;
+		this.modelOfInstrument = modelOfInstrument;
+		this.instrumentFamily = instrumentFamily;
+		this.dateCreated = dateCreated;
+		this.lastUpdate = lastUpdate;
+		this.condition = condition;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -81,19 +117,19 @@ public class InstrumentLog {
 		this.instrumentFamily = instrumentFamily;
 	}
 
-	public Date getDateCreated() {
+	public LocalDateTime getDateCreated() {
 		return dateCreated;
 	}
 
-	public void setDateCreated(Date dateCreated) {
+	public void setDateCreated(LocalDateTime dateCreated) {
 		this.dateCreated = dateCreated;
 	}
 
-	public Date getLastUpdate() {
+	public LocalDateTime getLastUpdate() {
 		return lastUpdate;
 	}
 
-	public void setLastUpdate(Date lastUpdate) {
+	public void setLastUpdate(LocalDateTime lastUpdate) {
 		this.lastUpdate = lastUpdate;
 	}
 
