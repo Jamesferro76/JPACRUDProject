@@ -13,11 +13,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class InstrumentTest {
+class InstrumentLogTest {
 	
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Instrument inst;
+	private InstrumentLog inst;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -32,7 +32,7 @@ class InstrumentTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em=emf.createEntityManager();
-		inst=em.find(Instrument.class, 1);
+		inst=em.find(InstrumentLog.class, 1);
 	}
 
 	@AfterEach

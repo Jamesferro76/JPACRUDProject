@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="instrument")
-public class Instrument {
+public class InstrumentLog {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class Instrument {
 	@Column(name="model")
 	private String modelOfInstrument;
 	
-	@Column(name="instrument_name")
+	@Column(name="instrument_family")
 	private String instrumentFamily;
 	
 	@Column(name="date_created")
@@ -37,7 +37,7 @@ public class Instrument {
 	
 	
 
-	public Instrument() {
+	public InstrumentLog() {
 		super();
 	}
 
@@ -107,7 +107,7 @@ public class Instrument {
 
 	@Override
 	public String toString() {
-		return "Instrument [id=" + id + ", instrument=" + instrument + ", brand=" + brand + ", modelOfInstrument="
+		return "InstrumentLog [id=" + id + ", instrument=" + instrument + ", brand=" + brand + ", modelOfInstrument="
 				+ modelOfInstrument + ", instrumentFamily=" + instrumentFamily + ", dateCreated=" + dateCreated
 				+ ", lastUpdate=" + lastUpdate + ", condition=" + condition + "]";
 	}
