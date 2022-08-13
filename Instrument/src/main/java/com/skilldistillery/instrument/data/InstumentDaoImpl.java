@@ -26,7 +26,8 @@ public class InstumentDaoImpl implements InstrumentDao {
 	@Override
 	public List<InstrumentLog> findAll() {
 		
-		String jpql="SELECT i FROM instrument i"
+		String jpql="SELECT i FROM instrument i";
+		
 		
 		return null;
 	}
