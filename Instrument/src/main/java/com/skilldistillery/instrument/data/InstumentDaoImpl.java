@@ -26,10 +26,12 @@ public class InstumentDaoImpl implements InstrumentDao {
 	@Override
 	public List<InstrumentLog> findAll() {
 		
-		String jpql="SELECT i FROM instrument i";
+		String jpql="SELECT i FROM InstrumentLog i ORDER BY i.id";
+		
+		List<InstrumentLog> allInstruments= em.createQuery(jpql, InstrumentLog.class).getResultList();
 		
 		
-		return null;
+		return allInstruments;
 	}
 
 }
