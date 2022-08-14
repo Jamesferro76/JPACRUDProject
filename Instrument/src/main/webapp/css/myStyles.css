@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+body{
+	background-color: #54e8ad;
+}
+a{
+	color: #db9660;
+}
+a:hover{
+	color: #c88ad1;
+}
+
+table{
+	text-align:center;
+}
