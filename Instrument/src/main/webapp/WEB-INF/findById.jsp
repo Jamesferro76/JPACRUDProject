@@ -10,6 +10,8 @@
 </head>
 <body>
 <jsp:include page="navbar.jsp"/>
+<main class="container-fluid">
+
 
 <c:choose>
 <c:when test="${not empty inst }">
@@ -49,6 +51,8 @@
 <input class="btn btn-primary" type="submit" value="Delete">
 </form>
 
+<br/>
+
 <form action="updatePage.do" method="post">
 <input type="hidden" name="instId" value="${inst.id }">
 <input class="btn btn-primary" type="submit" value="Update">
@@ -62,7 +66,7 @@
 </c:otherwise>
 
 </c:choose>
-
+</main>
 
 <jsp:include page="bootstrapFoot.jsp"/>
 </body>

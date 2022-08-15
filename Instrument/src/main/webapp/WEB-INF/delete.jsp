@@ -10,10 +10,12 @@
 </head>
 <body>
 <jsp:include page="navbar.jsp"/>
+<main class="container-fluid">
+
 
 <c:choose>
 <c:when test="${not empty inst }">
-<h2>Delete Successful</h2>
+<h1>Delete Successful</h1>
 <table class="table table-striped table-hover">
 <thead class="table-dark">
 <tr>
@@ -55,7 +57,7 @@
 
 </c:choose>
 
-
+</main>
 <jsp:include page="bootstrapFoot.jsp"/>
 </body>
 </html>

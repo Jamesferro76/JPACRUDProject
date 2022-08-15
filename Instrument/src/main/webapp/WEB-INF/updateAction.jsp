@@ -10,10 +10,12 @@
 </head>
 <body>
 <jsp:include page="navbar.jsp"/>
+<main class="container-fluid">
+
 
 <c:choose>
 <c:when test="${not empty inst }">
-<h2>Update Successful</h2>
+<h1>Update Successful</h1>
 <table class="table table-striped table-hover">
 <thead class="table-dark">
 <tr>
@@ -47,6 +49,7 @@
 <input type="hidden" name="instId" value="${inst.id }">
 <input class="btn btn-primary" type="submit" value="Delete">
 </form>
+<br/>
 
 <form action="updatePage.do" method="post">
 <input type="hidden" name="instId" value="${inst.id }">
@@ -63,7 +66,7 @@
 
 
 </c:choose>
-
+</main>
 
 <jsp:include page="bootstrapFoot.jsp"/>
 </body>

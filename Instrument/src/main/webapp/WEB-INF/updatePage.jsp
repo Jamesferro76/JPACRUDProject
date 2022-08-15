@@ -9,6 +9,8 @@
 </head>
 <body>
 <jsp:include page="navbar.jsp"/>
+<main class="container-fluid">
+
 
 <form action="updateAction.do" method="post">
 <input type="hidden" name="instId" value="${inst.id }" />
@@ -17,9 +19,10 @@ Brand: <input class= "form-control" type="text" name="brand" placeholder="${inst
 Model: <input class= "form-control" type="text" name="modelOfInstrument" placeholder="${inst.modelOfInstrument }" />
 Family: <input class= "form-control" type="text" name="instrumentFamily" placeholder="${inst.instrumentFamily }" />
 Condition: <input class= "form-control" type="text" name="condition" placeholder="${inst.condition }" />
-<input class="bttn btn-primary" type="submit" value="Update Instrument" >
+<br/>
+<input class="btn btn-primary" type="submit" value="Update Instrument" >
 </form>
-
+</main>
 
 <jsp:include page="bootstrapFoot.jsp"/>
 </body>

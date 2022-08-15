@@ -10,6 +10,8 @@
 </head>
 <body>
 <jsp:include page="navbar.jsp"/>
+<main class="container-fluid">
+
 
 <c:choose>
 <c:when test="${not empty allInstruments }">
@@ -48,7 +50,7 @@
 
 
 </c:choose>
-
+</main>
 
 <jsp:include page="bootstrapFoot.jsp"/>
 </body>
