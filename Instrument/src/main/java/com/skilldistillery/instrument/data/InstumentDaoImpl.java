@@ -44,8 +44,8 @@ public class InstumentDaoImpl implements InstrumentDao {
 //		return inst;
 //	}
 	@Override
-	public InstrumentLog createNewInstrument(String instrument, String brand, String modelOfInstrument, String instrumentFamily, String condition) {
-		InstrumentLog inst= new InstrumentLog(instrument, brand, modelOfInstrument, instrumentFamily, condition);
+	public InstrumentLog createNewInstrument(String instrument, String brand, String modelOfInstrument, String instrumentFamily, String condition, String firstName, String lastName) {
+		InstrumentLog inst= new InstrumentLog(instrument, brand, modelOfInstrument, instrumentFamily, condition, firstName, lastName);
 
 		em.persist(inst);
 //		em.flush();
@@ -63,7 +63,7 @@ public class InstumentDaoImpl implements InstrumentDao {
 	}
 
 	@Override
-	public InstrumentLog updateInstrument(int instId, String instrument, String brand, String modelOfInstrument, String instrumentFamily, String condition) {
+	public InstrumentLog updateInstrument(int instId, String instrument, String brand, String modelOfInstrument, String instrumentFamily, String condition, String firstName, String lastName) {
 		InstrumentLog ogInst=findById(instId);
 		
 		if(!instrument.equals("")&&instrument!=null) {
@@ -81,11 +81,27 @@ public class InstumentDaoImpl implements InstrumentDao {
 		if(!condition.equals("")&&condition!=null) {
 			ogInst.setCondition(condition);
 		}
+		if(!firstName.equals("")&&firstName!=null) {
+			ogInst.setFirstName(firstName);
+		}
+		if(!lastName.equals("")&&lastName!=null) {
+			ogInst.setLastName(lastName);
+		}
 		
 		return ogInst;
 		
 		
 		
+	}
+	
+public List<InstrumentLog> findByName(String firstName, String lastName) {
+		
+		String jpql="SELECT i FROM InstrumentLog i WHERE firstName IS '"+firstName+"' AND lastName IS'"+lastName+"'  ORDER BY i.id";
+		
+		List<InstrumentLog> allInstruments= em.createQuery(jpql, InstrumentLog.class).getResultList();
+		System.out.println(allInstruments);
+		
+		return allInstruments;
 	}
 	
 	

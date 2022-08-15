@@ -18,6 +18,8 @@ Brand: <input class= "form-control" type="text" name="brand" />
 Model: <input class= "form-control" type="text" name="modelOfInstrument" />
 Family: <input class= "form-control" type="text" name="instrumentFamily" />
 Condition: <input class= "form-control" type="text" name="condition" />
+Renter's First Name: <input class= "form-control" type="text" name="firstName" />
+Renter's Last Name: <input class= "form-control" type="text" name="lastName" />
 <br/>
 <input class="btn btn-primary" type="submit" value="Create Instrument">
 </form>

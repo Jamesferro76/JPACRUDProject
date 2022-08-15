@@ -42,6 +42,12 @@ public class InstrumentLog {
 	@Column(name="instrument_condition")
 	private String condition;
 	
+	@Column(name="student_first_name")
+	private String firstName;
+	
+	@Column(name="student_last_name")
+	private String lastName;
+	
 	
 
 	public InstrumentLog() {
@@ -58,6 +64,44 @@ public class InstrumentLog {
 		this.modelOfInstrument = modelOfInstrument;
 		this.instrumentFamily = instrumentFamily;
 		this.condition = condition;
+	}
+
+
+
+	public InstrumentLog(String instrument, String brand, String modelOfInstrument, String instrumentFamily,
+			String condition, String firstName, String lastName) {
+		super();
+		this.instrument = instrument;
+		this.brand = brand;
+		this.modelOfInstrument = modelOfInstrument;
+		this.instrumentFamily = instrumentFamily;
+		this.condition = condition;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 
@@ -145,7 +189,8 @@ public class InstrumentLog {
 	public String toString() {
 		return "InstrumentLog [id=" + id + ", instrument=" + instrument + ", brand=" + brand + ", modelOfInstrument="
 				+ modelOfInstrument + ", instrumentFamily=" + instrumentFamily + ", dateCreated=" + dateCreated
-				+ ", lastUpdate=" + lastUpdate + ", condition=" + condition + "]";
+				+ ", lastUpdate=" + lastUpdate + ", condition=" + condition + ", firstName=" + firstName + ", lastName="
+				+ lastName + "]";
 	}
 
 	

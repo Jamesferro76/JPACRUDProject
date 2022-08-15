@@ -19,6 +19,8 @@ Brand: <input class= "form-control" type="text" name="brand" placeholder="${inst
 Model: <input class= "form-control" type="text" name="modelOfInstrument" placeholder="${inst.modelOfInstrument }" />
 Family: <input class= "form-control" type="text" name="instrumentFamily" placeholder="${inst.instrumentFamily }" />
 Condition: <input class= "form-control" type="text" name="condition" placeholder="${inst.condition }" />
+Renter's First Name: <input class= "form-control" type="text" name="firstName" placeholder="${inst.firstName }" />
+Renter's Last Name: <input class= "form-control" type="text" name="lastName" placeholder="${inst.lastName }" />
 <br/>
 <input class="btn btn-primary" type="submit" value="Update Instrument" >
 </form>

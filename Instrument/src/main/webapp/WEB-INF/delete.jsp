@@ -27,6 +27,8 @@
 <th>Date Created</th>
 <th>Date Updated</th>
 <th>Condition</th>
+<th>First Name</th>
+<th>Last Name</th>
 </tr>
 </thead>
 
@@ -41,6 +43,8 @@
 <td>${inst.dateCreated }</td>
 <td>${inst.lastUpdate }</td>
 <td>${inst.condition }</td>
+<td>${inst.firstName }</td>
+<td>${inst.lastName }</td>
 </tr>
 
 </tbody>

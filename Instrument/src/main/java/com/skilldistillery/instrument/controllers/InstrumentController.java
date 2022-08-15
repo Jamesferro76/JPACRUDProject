@@ -39,10 +39,10 @@ public class InstrumentController {
 	}
 	
 	@RequestMapping(path= "createNewAction.do", method=RequestMethod.POST)
-	public String createNewInstrument(String instrument, String brand, String modelOfInstrument, String instrumentFamily, String condition, Model model) {
+	public String createNewInstrument(String instrument, String brand, String modelOfInstrument, String instrumentFamily, String condition, String firstName, String lastName, Model model) {
 //		InstrumentLog inst= new InstrumentLog(instrument, brand, modelOfInstrument, family, condition);
 
-		model.addAttribute("inst", dao.createNewInstrument(instrument, brand, modelOfInstrument, instrumentFamily, condition)); 
+		model.addAttribute("inst", dao.createNewInstrument(instrument, brand, modelOfInstrument, instrumentFamily, condition, firstName, lastName)); 
 		return "createNewAction";
 	}
 	
@@ -60,10 +60,20 @@ public class InstrumentController {
 	
 	
 	@RequestMapping(path= "updateAction.do")
-	public String updateInstrument(int instId, String instrument, String brand, String modelOfInstrument, String instrumentFamily, String condition, Model model) {
-		model.addAttribute("inst", dao.updateInstrument(instId, instrument, brand, modelOfInstrument, instrumentFamily, condition));
+	public String updateInstrument(int instId, String instrument, String brand, String modelOfInstrument, String instrumentFamily, String condition, String firstName, String lastName, Model model) {
+		model.addAttribute("inst", dao.updateInstrument(instId, instrument, brand, modelOfInstrument, instrumentFamily, condition, firstName, lastName));
 		return "updateAction";
 	}
 	
+	@RequestMapping(path= "findByNamePage.do")
+	public String findByNamePage() {
+		return "findByNamePage";
+	}
+		
+	@RequestMapping(path= "findByName.do")
+	public String findByName(String firstName, String lastName, Model model) {
+		model.addAttribute("allInstruments", dao.findByName(firstName, lastName) );
+		return "findByNameAction";
+	}
 
 }

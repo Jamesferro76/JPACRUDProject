@@ -19,6 +19,11 @@ Instrument ID: <input class= "form-control" type="text" name="instId" required/>
 </form>
 <br/>
 
+<form action="findByNamePage.do">
+<input class="btn btn-primary" type="submit" value="Find By Name">
+</form>
+<br/>
+
 <form action="findAll.do">
 <input class="btn btn-primary" type="submit" value="Find All Instruments">
 </form>
