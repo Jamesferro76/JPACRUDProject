@@ -13,7 +13,7 @@
 
 
 <form action="createNewAction.do" method="post">
-Instrument: <input class= "form-control" type="text" name="instrument" />
+Instrument: <input class= "form-control" type="text" name="instrument" required/>
 Brand: <input class= "form-control" type="text" name="brand" />
 Model: <input class= "form-control" type="text" name="modelOfInstrument" />
 Family: <input class= "form-control" type="text" name="instrumentFamily" />

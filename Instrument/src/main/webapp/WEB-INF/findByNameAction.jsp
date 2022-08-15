@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Find By Name</title>
 <jsp:include page="bootstrapHead.jsp"/>
 </head>
 <body>

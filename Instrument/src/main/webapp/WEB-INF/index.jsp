@@ -11,13 +11,13 @@
 <body>
 <div class="bg">
 <jsp:include page="navbar.jsp"/>
-<main class="container-fluid">
 <h1>Welcome to the Instrument App</h1>
 
 <form action="findById.do">
 Instrument ID: <input class= "form-control" type="text" name="instId" required/>
 <br/>
 </div>
+<main class="container-fluid">
 <input class="btn btn-primary" type="submit" value="Find Instrument By Id">
 </form>
 
