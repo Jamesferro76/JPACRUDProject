@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+html, body {
+  margin:5;
+  height:100%;
+}
+
+
+body {
+	background-image: url("https://music.utk.edu/symphony/images/symphony1.jpg");
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.bg{
+	background-color: #54e8ad;
+}
